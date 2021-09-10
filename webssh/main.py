@@ -16,9 +16,9 @@ def make_handlers(loop, options):
     policy = get_policy_setting(options, host_keys_settings)
 
     handlers = [
-        (r'/terminal', IndexHandler, dict(loop=loop, policy=policy,
+        (r'/', IndexHandler, dict(loop=loop, policy=policy,
                                   host_keys_settings=host_keys_settings)),
-        (r'/terminal/ws', WsockHandler, dict(loop=loop))
+        (r'/ws', WsockHandler, dict(loop=loop))
     ]
     return handlers
 
