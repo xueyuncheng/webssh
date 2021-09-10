@@ -187,8 +187,8 @@ wssh --address='127.0.0.1' --port=8888 --policy=reject
 ```
 ```nginx
 # Nginx config example
-location / {
-    proxy_pass http://127.0.0.1:8888;
+location /webssh/ {
+    proxy_pass http://127.0.0.1:8888/webssh/;
     proxy_http_version 1.1;
     proxy_read_timeout 300;
     proxy_set_header Upgrade $http_upgrade;
